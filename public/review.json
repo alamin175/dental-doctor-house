@@ -1,0 +1,32 @@
+[
+  {
+    "name": "John Doe",
+    "location": "Dhaka",
+    "image": "path/to/image1.jpg",
+    "details": "Fantastic care! The warmth and expertise create a positive and comfortable environment.Fantastic care! The warmth and expertise create a positive and comfortable environment.Exceptional service! The expertise and care provided are truly remarkable.Outstanding professionalism and attention to detail. Highly recommended!Outstanding professionalism and attention to detail. Highly recommended!"
+  },
+  {
+    "name": "Jane Smith",
+    "location": "America",
+    "image": "path/to/image2.jpg",
+    "details": "Outstanding professionalism and attention to detail.A true professional dedicated to patient well-being. Impressive service!. Fantastic care! The warmth and expertise create a positive and comfortable environment.Fantastic care! The warmth and expertise create a positive and comfortable environment.Exceptional service! The expertise and care provided are truly remarkable.Outstanding professionalism and attention to detail. Highly recommended!Outstanding professionalism and attention to detail. Highly recommended Highly recommended!"
+  },
+  {
+    "name": "Alex Johnson",
+    "location": "Kashmir",
+    "image": "path/to/image3.jpg",
+    "details": "A true professional dedicated to patient well-being. Impressive service!. Fantastic care! The warmth and expertise create a positive and comfortable environment.Fantastic care! The warmth and expertise create a positive and comfortable environment.Exceptional service! The expertise and care provided are truly remarkable.Outstanding professionalism and attention to detail. Highly recommended!Outstanding professionalism and attention to detail. Highly recommended"
+  },
+  {
+    "name": "Emily Davis",
+    "location": "Sylhet",
+    "image": "path/to/image4.jpg",
+    "details": "Fantastic care! The warmth and expertise create a positive and comfortable environment. A true professional dedicated to patient well-being. Impressive service!. Fantastic care! The warmth and expertise create a positive and comfortable environment.Fantastic care! The warmth and expertise create a positive and comfortable environment.Exceptional service! The expertise and care provided are truly remarkable.Outstanding professionalism and attention to detail. Highly recommended!Outstanding professionalism and attention to detail. Highly recommended"
+  },
+  {
+    "name": "Michael Wilson",
+    "location": "Rangamati",
+    "image": "path/to/image5.jpg",
+    "details": "Outstanding service!A true professional dedicated to patient well-being. Impressive service!. Fantastic care! The warmth and expertise create a positive and comfortable environment.Fantastic care! The warmth and expertise create a positive and comfortable environment.Exceptional service! The expertise and care provided are truly remarkable.Outstanding professionalism and attention to detail. Highly recommended!Outstanding professionalism and attention to detail. Highly recommended A positive approach ensures a great experience for every patient."
+  }
+]
