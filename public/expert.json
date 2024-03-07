@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Dr. Sarah Johnson",
+    "id": 5344553355,
+    "price": 25,
+    "available": "Monday-Friday",
+    "image": "../src/assets/images/doctor-img/expert-doctor1.jpg",
+    "title": "Pediatrician",
+    "post": "Child Health Specialist",
+    "rating": 5,
+    "location": "Townsville",
+    "details": "Passionate about providing quality healthcare for children and promoting overall well-being.",
+    "varsity1": "University of Medicine",
+    "passed1": 2008,
+    "varsity2": "Pediatric Medical School",
+    "passed2": 2013,
+    "experience": [
+      { "name": "Children's Hospital XYZ", "years": 7 },
+      { "name": "Pediatric Clinic ABC", "years": 4 },
+      { "name": "Community Health Center 123", "years": 3 }
+    ],
+    "services": [
+      "Pediatric Consultation",
+      "Vaccination Programs",
+      "Child Development Assessment",
+      "Parental Guidance Sessions",
+      "Emergency Pediatrics",
+      "Nutritional Counseling"
+    ],
+    "specialization": [
+      "Pediatrics",
+      "Child Development",
+      "Infectious Diseases in Children",
+      "Adolescent Medicine",
+      "Pediatric Allergies",
+      "Behavioral Pediatrics"
+    ],
+    "awards": [
+      {
+        "name": "Pediatric Excellence Award",
+        "year": 2017,
+        "details": "Recognized for exceptional contributions to pediatric medicine."
+      },
+      {
+        "name": "Child Health Advocate",
+        "year": 2015,
+        "details": "Acknowledged for advocacy and initiatives promoting child health."
+      },
+      {
+        "name": "Outstanding Pediatrician",
+        "year": 2012,
+        "details": "Awarded for outstanding service in the field of pediatrics."
+      }
+    ]
+  },
+  {
+    "name": "Dr. Michael Chang",
+    "id": 53445533451,
+    "price": 35,
+    "available": "Sunday-Thursday",
+    "image": "../src/assets/images/doctor-img/expert-doctor2.jpg",
+    "title": "Orthopedic Surgeon",
+    "post": "Bone and Joint Specialist",
+    "rating": 5,
+    "location": "Ortho City",
+    "details": "Dedicated to providing advanced orthopedic care and helping patients regain mobility and comfort.",
+    "varsity1": "Medical School of Orthopedics",
+    "passed1": 2005,
+    "varsity2": "Orthopedic Surgery Residency",
+    "passed2": 2010,
+    "experience": [
+      { "name": "Orthopedic Center XYZ", "years": 8 },
+      { "name": "Joint Care Clinic ABC", "years": 5 },
+      { "name": "Sports Injury Center 123", "years": 4 }
+    ],
+    "services": [
+      "Orthopedic Consultation",
+      "Joint Replacement Surgery",
+      "Sports Injury Rehabilitation",
+      "Arthroscopic Procedures",
+      "Fracture Management",
+      "Spinal Surgery"
+    ],
+    "specialization": [
+      "Orthopedic Surgery",
+      "Joint Replacement",
+      "Sports Medicine",
+      "Spinal Disorders",
+      "Orthopedic Trauma",
+      "Arthritis Management"
+    ],
+    "awards": [
+      {
+        "name": "Orthopedic Excellence Award",
+        "year": 2018,
+        "details": "Recognized for outstanding contributions to orthopedic surgery."
+      },
+      {
+        "name": "Sports Medicine Achievement",
+        "year": 2014,
+        "details": "Acknowledged for achievements in the field of sports medicine."
+      },
+      {
+        "name": "Innovations in Joint Replacement",
+        "year": 2010,
+        "details": "Awarded for contributions to innovative joint replacement techniques."
+      }
+    ]
+  },
+  {
+    "name": "Dr. Olivia Martinez",
+    "id": 53445533,
+    "price": 15,
+    "available": "Wednesday-Saturday",
+    "image": "../src/assets/images/doctor-img/expert-doctor3.jpeg",
+    "title": "Dermatologist",
+    "post": "Skin Care Specialist",
+    "rating": 4,
+    "location": "Skin Haven",
+    "details": "Passionate about enhancing skin health and providing personalized skincare solutions.",
+    "varsity1": "Dermatology School of Medicine",
+    "passed1": 2006,
+    "varsity2": "Advanced Dermatology Fellowship",
+    "passed2": 2011,
+    "experience": [
+      { "name": "Dermatology Clinic XYZ", "years": 9 },
+      { "name": "Cosmetic Dermatology Center ABC", "years": 6 },
+      { "name": "Skin Wellness Center 123", "years": 3 }
+    ],
+    "services": [
+      "Dermatological Consultation",
+      "Cosmetic Procedures",
+      "Acne Treatment",
+      "Skin Cancer Screenings",
+      "Anti-Aging Solutions",
+      "Chemical Peels"
+    ],
+    "specialization": [
+      "Clinical Dermatology",
+      "Cosmetic Dermatology",
+      "Pediatric Dermatology",
+      "Dermatopathology",
+      "Laser Surgery",
+      "Dermatological Surgery"
+    ],
+    "awards": [
+      {
+        "name": "Dermatology Excellence Award",
+        "year": 2019,
+        "details": "Recognized for outstanding contributions to dermatology."
+      },
+      {
+        "name": "Innovations in Cosmetic Dermatology",
+        "year": 2015,
+        "details": "Acknowledged for innovations in cosmetic dermatological procedures."
+      },
+      {
+        "name": "Skin Health Advocate",
+        "year": 2011,
+        "details": "Awarded for advocacy in promoting skin health and awareness."
+      }
+    ]
+  }
+]

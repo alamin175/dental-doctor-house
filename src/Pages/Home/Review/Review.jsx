@@ -14,10 +14,10 @@ const Review = () => {
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
-  console.log(reviews);
+  // console.log(reviews);
   return (
     <div>
-      <div className="text-center p-6 md:w-4/6 md:my-20 mx-auto">
+      <div className="text-center p-6 md:w-4/6 md:mt-32 mx-auto">
         <h3 className="mb-4 text-2xl md:text-5xl font-bold">
           What Our Patients Says
         </h3>
@@ -31,7 +31,7 @@ const Review = () => {
       <div>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
           {reviews.map((review) => (
-            <SwiperSlide>
+            <SwiperSlide key={review.id}>
               <div className="border-4 border-orange-500 w-11/12 md:w-1/2 md:my-10 text-start p-10 rounded-lg mx-auto">
                 <div className="md:flex justify-between">
                   <div className="flex">
