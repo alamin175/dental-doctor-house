@@ -14,11 +14,11 @@ const DoctorDetails = () => {
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
         <h1 className="text-5xl text-white font-bold ">Doctor Profile</h1>
       </div>
-      <section className="bg-[#E6E6E6] p-10">
-        <div className="flex p-6 bg-white w-10/12 items-center gap-16 mx-auto m-10">
-          <img className="w-56" src={details.image} alt="" />
+      <section className="bg-[#E6E6E6] p-4 md:p-10">
+        <div className="md:flex p-6 bg-white md:w-10/12 items-center gap-16 mx-auto m-10">
+          <img className="md:w-56 " src={details.image} alt="" />
           <div className="flex flex-col gap-3">
-            <h1 className="text-3xl">{details.name}</h1>
+            <h1 className="text-3xl mt-4 md:mt-0s ">{details.name}</h1>
             <p>{details.post}</p>
             <p className="flex text-orange-500">
               {Array.from({ length: details.rating }, (_, index) => (
@@ -28,8 +28,8 @@ const DoctorDetails = () => {
             <p className="flex items-center">
               <FaLocationDot /> {details.location}
             </p>
-            <div className="flex gap-3">
-              <p className="border-2 border-gray-400 p-2 rounded-lg ">
+            <div className="md:flex gap-3">
+              <p className="border-2 border-gray-400 p-2 mb-4 md:mb-0 rounded-lg ">
                 {details.specialization[0]}
               </p>
               <p className="border-2 border-gray-400 p-2 rounded-lg ">
@@ -38,26 +38,30 @@ const DoctorDetails = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col mx-auto w-10/12 bg-white justify-center">
+        <div className="flex flex-col mx-auto md:w-10/12 bg-white justify-center">
           <div className="w-11/12 mt-6 mx-auto">
             <ul className="menu menu-horizontal font-bold w-full flex justify-between bg-orange-400 rounded-box">
               <li>
-                <a className="tooltip" data-tip="Home">
+                <a
+                  className="tooltip"
+                  data-tip="
+                Overview"
+                >
                   Overview
                 </a>
               </li>
               <li>
-                <a className="tooltip" data-tip="Details">
+                <a className="tooltip" data-tip="Locations">
                   Locations
                 </a>
               </li>
               <li>
-                <a className="tooltip" data-tip="Stats">
+                <a className="tooltip" data-tip={`${details.rating} star`}>
                   Reviews
                 </a>
               </li>
               <li>
-                <a className="tooltip" data-tip="Stats">
+                <a className="tooltip" data-tip="6pm - 11pm">
                   Business Hours
                 </a>
               </li>
@@ -66,7 +70,7 @@ const DoctorDetails = () => {
           <div className="m-8">
             <h2 className="mb-3 font-bold">About Me</h2>
             <p className="text-gray-500"> {details.details}</p>
-            <div className="flex">
+            <div className="md:flex">
               <div className="w-full">
                 <div>
                   <h2 className="my-5 font-bold text-xl">Education</h2>
@@ -128,7 +132,7 @@ const DoctorDetails = () => {
                 <div>
                   <h2 className="my-5 mt-6 font-bold text-xl">Awards</h2>
                   {details.awards.map((award) => (
-                    <div key={award.name} className="ml-8 mb-6">
+                    <div key={award.name} className="ml-3 md:ml-8 mb-6">
                       <li>{award.year}</li>
                       <p className="font-bold ml-5 my-3 ">{award.name}</p>
                       <p className="ml-5 text-gray-500">{award.details}</p>
@@ -140,7 +144,7 @@ const DoctorDetails = () => {
                     Specializations
                   </h2>
                   {details.specialization.map((special) => (
-                    <li className="text-gray-500 ml-8" key={special}>
+                    <li className="text-gray-500 ml-3 md:ml-8" key={special}>
                       {special}
                     </li>
                   ))}
