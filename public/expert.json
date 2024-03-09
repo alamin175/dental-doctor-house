@@ -9,15 +9,20 @@
     "post": "Child Health Specialist",
     "rating": 5,
     "location": "Townsville",
-    "details": "Passionate about providing quality healthcare for children and promoting overall well-being.",
+    "details": "Passionate about providing quality healthcare for children and promoting overall well-being. I always try to do something special for children. Specially those who are not able to prefer regular life to enjoy themself perfectly. I do this with my passion with my way. And this is my favorite work in the hospital.",
     "varsity1": "University of Medicine",
-    "passed1": 2008,
+    "passed1": "2008-2012",
     "varsity2": "Pediatric Medical School",
-    "passed2": 2013,
+    "passed2": "2013-2017",
+    "graduate": ["MDS", "BDS"],
+
     "experience": [
-      { "name": "Children's Hospital XYZ", "years": 7 },
-      { "name": "Pediatric Clinic ABC", "years": 4 },
-      { "name": "Community Health Center 123", "years": 3 }
+      { "name": "Children's Hospital XYZ", "years": "2019-Present (5 Years)" },
+      { "name": "Pediatric Clinic ABC", "years": "2015-2020 (6 Years)" },
+      {
+        "name": "Community Health Center 123",
+        "years": "2021-Present (3 Years)"
+      }
     ],
     "services": [
       "Pediatric Consultation",
@@ -39,17 +44,17 @@
       {
         "name": "Pediatric Excellence Award",
         "year": 2017,
-        "details": "Recognized for exceptional contributions to pediatric medicine."
+        "details": "Recognized for exceptional contributions to pediatric medicine. Fantastic performance in medical industry."
       },
       {
         "name": "Child Health Advocate",
         "year": 2015,
-        "details": "Acknowledged for advocacy and initiatives promoting child health."
+        "details": "Acknowledged for advocacy and initiatives promoting child health. Fantastic performance in medical industry."
       },
       {
         "name": "Outstanding Pediatrician",
         "year": 2012,
-        "details": "Awarded for outstanding service in the field of pediatrics."
+        "details": "Awarded for outstanding service in the field of pediatrics. Fantastic performance in medical industry."
       }
     ]
   },
@@ -63,15 +68,16 @@
     "post": "Bone and Joint Specialist",
     "rating": 5,
     "location": "Ortho City",
-    "details": "Dedicated to providing advanced orthopedic care and helping patients regain mobility and comfort.",
+    "details": "Dedicated to providing advanced orthopedic care and helping patients regain mobility and comfort. I always try to do something special for children. Specially those who are not able to prefer regular life to enjoy themself perfectly. I do this with my passion with my way. And this is my favorite work in the hospital.",
     "varsity1": "Medical School of Orthopedics",
-    "passed1": 2005,
+    "passed1": "2005-2009",
     "varsity2": "Orthopedic Surgery Residency",
-    "passed2": 2010,
+    "passed2": "2010-2013",
+    "graduate": ["MDS", "BDS"],
     "experience": [
-      { "name": "Orthopedic Center XYZ", "years": 8 },
-      { "name": "Joint Care Clinic ABC", "years": 5 },
-      { "name": "Sports Injury Center 123", "years": 4 }
+      { "name": "Orthopedic Center XYZ", "years": "2017-Present (7 Years)" },
+      { "name": "Joint Care Clinic ABC", "years": "2020-Present (4 Years)" },
+      { "name": "Sports Injury Center 123", "years": "2017-2022 (5 Years)" }
     ],
     "services": [
       "Orthopedic Consultation",
@@ -93,17 +99,17 @@
       {
         "name": "Orthopedic Excellence Award",
         "year": 2018,
-        "details": "Recognized for outstanding contributions to orthopedic surgery."
+        "details": "Recognized for outstanding contributions to orthopedic surgery. Fantastic performance in medical industry."
       },
       {
         "name": "Sports Medicine Achievement",
         "year": 2014,
-        "details": "Acknowledged for achievements in the field of sports medicine."
+        "details": "Acknowledged for achievements in the field of sports medicine. Fantastic performance in medical industry."
       },
       {
         "name": "Innovations in Joint Replacement",
         "year": 2010,
-        "details": "Awarded for contributions to innovative joint replacement techniques."
+        "details": "Awarded for contributions to innovative joint replacement techniques.  Fantastic performance in medical industry."
       }
     ]
   },
@@ -117,15 +123,19 @@
     "post": "Skin Care Specialist",
     "rating": 4,
     "location": "Skin Haven",
-    "details": "Passionate about enhancing skin health and providing personalized skincare solutions.",
+    "details": "Passionate about enhancing skin health and providing personalized skincare solutions. I always try to do something special for children. Specially those who are not able to prefer regular life to enjoy themself perfectly. I do this with my passion with my way. And this is my favorite work in the hospital.",
     "varsity1": "Dermatology School of Medicine",
-    "passed1": 2006,
+    "passed1": "2006-2009",
     "varsity2": "Advanced Dermatology Fellowship",
-    "passed2": 2011,
+    "passed2": "2011-2014",
+    "graduate": ["MDS", "BDS"],
     "experience": [
-      { "name": "Dermatology Clinic XYZ", "years": 9 },
-      { "name": "Cosmetic Dermatology Center ABC", "years": 6 },
-      { "name": "Skin Wellness Center 123", "years": 3 }
+      { "name": "Dermatology Clinic XYZ", "years": "2019-2023 (4 Years)" },
+      {
+        "name": "Cosmetic Dermatology Center ABC",
+        "years": "2018-Present (6 Years)"
+      },
+      { "name": "Skin Wellness Center 123", "years": "2015-2019 (4 Years)" }
     ],
     "services": [
       "Dermatological Consultation",
@@ -147,17 +157,17 @@
       {
         "name": "Dermatology Excellence Award",
         "year": 2019,
-        "details": "Recognized for outstanding contributions to dermatology."
+        "details": "Recognized for outstanding contributions to dermatology. Fantastic performance in medical industry."
       },
       {
         "name": "Innovations in Cosmetic Dermatology",
         "year": 2015,
-        "details": "Acknowledged for innovations in cosmetic dermatological procedures."
+        "details": "Acknowledged for innovations in cosmetic dermatological procedures. Fantastic performance in medical industry."
       },
       {
         "name": "Skin Health Advocate",
         "year": 2011,
-        "details": "Awarded for advocacy in promoting skin health and awareness."
+        "details": "Awarded for advocacy in promoting skin health and awareness. Fantastic performance in medical industry."
       }
     ]
   }

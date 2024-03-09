@@ -12,7 +12,7 @@ const ExpertDoctor = () => {
       .then((res) => res.json())
       .then((data) => setExpertDoctor(data));
   }, []);
-  console.log(expertDoctor);
+  // console.log(expertDoctor);
 
   return (
     <div className="my-16">

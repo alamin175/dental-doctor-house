@@ -15,6 +15,7 @@ export const router = createBrowserRouter([
       {
         path: "/doctor/:id",
         element: <DoctorDetails></DoctorDetails>,
+        loader: () => fetch("/expert.json"),
       },
     ],
   },
