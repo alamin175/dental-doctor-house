@@ -21,9 +21,11 @@ const Navbar = () => {
       <li>
         <a>About</a>
       </li>
-      <li>
-        <a>Appoinment</a>
-      </li>
+      <Link to="/appoinment">
+        <li>
+          <a>Appoinment</a>
+        </li>
+      </Link>
       {user ? (
         <button className="btn bg-[#F7A582]" onClick={handleLogOut}>
           LogOut
