@@ -21,7 +21,7 @@ const ExpertDoctor = () => {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center">
         {expertDoctor.map((doctor) => (
-          <div className="card w-96 bg-base-100 shadow-xl ">
+          <div key={doctor.name} className="card w-96 bg-base-100 shadow-xl ">
             <figure className="px-4 pt-10">
               <img
                 src={doctor.image}

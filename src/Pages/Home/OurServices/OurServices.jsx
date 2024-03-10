@@ -43,7 +43,7 @@ const OurServices = () => {
             aperiam, eaque ipsa quae ab illo inve ntore veritatis et quasi
             architecto beatae vitae dicta sunt explicabo.
           </p>
-          <button class="btn outline outline-2 outline-orange-400 my-5 bg-transparent hover:bg-orange-400">
+          <button className="btn outline outline-2 outline-orange-400 my-5 bg-transparent hover:bg-orange-400">
             More Details
           </button>
         </div>

@@ -9,7 +9,6 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
@@ -34,6 +33,7 @@ const Login = () => {
             theme: "dark",
             transition: Bounce,
           });
+          reset();
         }
       })
       .catch((error) => console.log(error.message));
@@ -41,11 +41,11 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex">
-        <div className="flex items-center bg-emerald-800 w-1/2 h-screen">
+      <div className="md:flex">
+        <div className="flex items-center bg-emerald-800 md:w-1/2 md:h-screen">
           <img src="https://i.ibb.co/dG1Wt6q/Mobile-login-pana.png" alt="" />
         </div>
-        <div className="flex mx-auto justify-center  items-center">
+        <div className="flex mx-auto my-10 justify-center  items-center">
           <div className="border-2 border-gray-300 p-8">
             <h1 className="text-4xl">Please Login</h1>
             <form onSubmit={handleSubmit(onSubmit)}>

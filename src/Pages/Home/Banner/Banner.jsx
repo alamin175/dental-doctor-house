@@ -22,9 +22,9 @@ const Banner = () => {
             Your Dental solution is now on your hand. You can easily use us to
             live long with your fresh teeth. Finding us is so easy for everyone.
           </p>
-          <btn className="btn bg-orange-400 mt-2 hover:bg-orange-500">
+          <button className="btn bg-orange-400 mt-2 hover:bg-orange-500">
             All Services <FaArrowAltCircleRight></FaArrowAltCircleRight>
-          </btn>
+          </button>
         </div>
         <div className="relative ">
           <div className="absolute top-16 -left-20 lg:-left-48">

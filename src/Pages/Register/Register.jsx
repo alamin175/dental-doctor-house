@@ -51,11 +51,11 @@ const Register = () => {
 
   return (
     <>
-      <div className="flex flex-row-reverse">
-        <div className="flex items-center bg-emerald-800 w-1/2 h-screen">
+      <div className="md:flex flex-row-reverse">
+        <div className="flex items-center bg-emerald-800 md:w-1/2 md:h-screen">
           <img src="https://i.ibb.co/dG1Wt6q/Mobile-login-pana.png" alt="" />
         </div>
-        <div className="flex mx-auto justify-center  items-center">
+        <div className="flex mx-auto my-10 justify-center  items-center">
           <div className="border-2 border-gray-300 p-8">
             <h1 className="text-4xl">Please Register</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
