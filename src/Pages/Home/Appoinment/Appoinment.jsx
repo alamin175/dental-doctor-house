@@ -79,8 +79,8 @@ const Appoinment = () => {
           Appoinment
         </h1>
       </div>
-      <div className="flex gap-10 mx-auto justify-center  items-center">
-        <div className="m-9 ">
+      <div className="flex flex-col-reverse md:flex-row gap-10 justify-center items-center">
+        <div className="m-9 mx-auto">
           <DayPicker
             mode="single"
             onDayClick={handleDateSelect}
@@ -89,15 +89,15 @@ const Appoinment = () => {
             footer={footer}
           />
         </div>
-        <div className="w-1/2">
+        <div className="mx-auto p-4 md:w-1/2">
           <img className="" src={img} alt="" />
         </div>
       </div>
       <div>
-        <h1 className="text-[#F7A582] text-5xl text-center m-10">
+        <h1 className="text-[#F7A582] text-3xl md:text-5xl text-center m-10">
           Please select a service
         </h1>
-        <div className="grid grid-cols-3 m-4 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 m-4 gap-10">
           {services.map((service) => (
             <div
               key={service._id}
@@ -107,7 +107,7 @@ const Appoinment = () => {
               }`}
             >
               <img className="w-20" src={service.image} alt="" />
-              <h3 className="text-3xl place my-auto font-semibold">
+              <h3 className="text-2xl md:text-3xl place my-auto font-semibold">
                 {service.title}
               </h3>
             </div>
@@ -123,14 +123,14 @@ const Appoinment = () => {
                 </button>
               </form>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="flex flex-col items-center m-6">
+                <div className="flex flex-col justify-center items-center m-6">
                   <label className="form-control">
                     <div className="label">
                       <span className="label-text">Service Name</span>
                     </div>
                     <input
                       readOnly
-                      value={selectService}
+                      value={selectService ? selectService : ""}
                       placeholder="Your Password"
                       className="input bg-slate-300 input-bordered input-success w-full max-w-xs"
                     />
@@ -150,7 +150,7 @@ const Appoinment = () => {
                       <span className="label-text">Email</span>
                     </div>
                     <input
-                      value={user?.email}
+                      value={user?.email ? user.email : ""}
                       readOnly
                       className="input bg-slate-300 input-bordered input-success w-full max-w-xs"
                     />
@@ -191,7 +191,11 @@ const Appoinment = () => {
 
                 {errors.exampleRequired && <span>This field is required</span>}
 
-                <input className="btn" type="submit" value="Booking Confirm" />
+                <input
+                  className="btn bg-emerald-800 hover:bg-emerald-900 text-white w-1/2"
+                  type="submit"
+                  value="Booking Confirm"
+                />
               </form>
             </div>
           </dialog>
@@ -205,7 +209,7 @@ const Appoinment = () => {
               }
             }}
             // id="booking"
-            className="btn text-lg bg-[#f7A582] w-1/4 hover:bg-[#f39770]"
+            className="btn text-lg bg-[#f7A582] w-full md:w-1/4 hover:bg-[#f39770]"
           >
             Book Now
           </button>

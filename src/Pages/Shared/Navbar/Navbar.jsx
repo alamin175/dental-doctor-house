@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthContext";
+import img from "../../../assets/images/Other Image/image-removebg-preview.png";
 
-const Navbar = () => {
+const Navbar = ({ isFixed }) => {
   const { user, logOut } = useContext(UserContext);
   const handleLogOut = () => {
     logOut().then(() => {
@@ -18,12 +19,19 @@ const Navbar = () => {
         </li>
       </Link>
 
-      <li>
-        <a>About</a>
-      </li>
+      <Link to="/about">
+        <li>
+          <a>About</a>
+        </li>
+      </Link>
       <Link to="/appoinment">
         <li>
           <a>Appoinment</a>
+        </li>
+      </Link>
+      <Link to="/dashboard">
+        <li>
+          <a>Dashboard</a>
         </li>
       </Link>
       {user ? (
@@ -40,7 +48,11 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar mx-auto  bg-black bg-opacity-30 text-white max-w-screen-xl z-10 fixed">
+    <div
+      className={`navbar mx-auto  bg-black bg-opacity-30 text-white max-w-screen-xl z-10 ${
+        isFixed ? "fixed" : ""
+      } `}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -66,7 +78,9 @@ const Navbar = () => {
             {navOption}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Doctor House</a>
+        <Link to="/">
+          <img src={img} className="md:w-1/2" />
+        </Link>
       </div>
       <div className="navbar-end hidden lg:flex ">
         <ul className="menu menu-horizontal px-1 items-center">{navOption}</ul>

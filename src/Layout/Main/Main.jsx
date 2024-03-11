@@ -10,7 +10,7 @@ const Main = () => {
     location.pathname.includes("register");
   return (
     <div className="">
-      {noNavFooter || <Navbar></Navbar>}
+      {noNavFooter || <Navbar isFixed={true}></Navbar>}
       <Outlet></Outlet>
 
       {noNavFooter || <Footer></Footer>}
