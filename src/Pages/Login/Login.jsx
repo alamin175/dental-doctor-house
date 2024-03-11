@@ -54,26 +54,30 @@ const Login = () => {
                   <span className="label-text">Email</span>
                 </div>
                 <input
-                  {...register("email", { required: true })}
+                  {...register("email", { required: "Email is required" })}
                   type="email"
                   placeholder="Your Email"
                   className="input input-bordered input-success w-full max-w-xs"
                 />
               </label>
-              {errors.email && <span>This field is required</span>}
+              {errors.email && (
+                <span className="text-red-600">{errors.email.message}</span>
+              )}
 
               <label className="form-control">
                 <div className="label">
                   <span className="label-text">Password</span>
                 </div>
                 <input
-                  {...register("password", { required: true })}
+                  {...register("password", { required: "Password needed" })}
                   type="password"
                   placeholder="Your Password"
                   className="input input-bordered input-success w-full max-w-xs"
                 />
               </label>
-              {errors.password && <span>This field is required</span>}
+              {errors.password && (
+                <span className="text-red-600">{errors.password.message}</span>
+              )}
               <br />
               <input
                 className="btn bg-[#F7A582] w-full hover:bg-[#fa8c5c]"
