@@ -1,6 +1,4 @@
-import img1 from "../../../assets/images/doctor-img/doctor1.jpg";
 import img2 from "../../../assets/images/doctor-img/doctor2.jpg";
-import img3 from "../../../assets/images/doctor-img/doctor3.jpg";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 
 const Banner = () => {
@@ -28,7 +26,11 @@ const Banner = () => {
         </div>
         <div className="relative ">
           <div className="absolute top-16 -left-20 lg:-left-48">
-            <img className="w-32 md:w-36 lg:w-40" src={img1} alt="" />
+            <img
+              className="w-32 md:w-36 lg:w-40"
+              src={"https://i.ibb.co/55MpXZR/doctor1.jpg"}
+              alt=""
+            />
           </div>
           <div className="absolute top-40 -ml-2 lg:-ml-20">
             <img
@@ -38,7 +40,11 @@ const Banner = () => {
             />
           </div>
           <div className="relative top-8 left-20 lg:left-8">
-            <img className="w-32 md:w-36 lg:w-40" src={img3} alt="" />
+            <img
+              className="w-32 md:w-36 lg:w-40"
+              src={"https://i.ibb.co/g77xQjd/doctor3.jpg"}
+              alt=""
+            />
           </div>
         </div>
       </div>

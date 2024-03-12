@@ -14,7 +14,7 @@ const MyAppoinments = () => {
       return result.data;
     },
   });
-  console.log(appoinments);
+  // console.log(appoinments);
 
   return (
     <div>
@@ -24,7 +24,7 @@ const MyAppoinments = () => {
       <div className="flex justify-center w-11/12 md:w-9/12 mx-auto bg-white  overflow-x-auto my-16">
         <table className="table-md md:m-10">
           {/* head */}
-          <thead className="bg-slate-300">
+          <thead className="bg-gray-300">
             <tr>
               <th>#</th>
               <th>Name</th>

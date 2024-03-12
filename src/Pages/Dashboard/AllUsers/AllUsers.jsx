@@ -1,0 +1,116 @@
+import { useQuery } from "@tanstack/react-query";
+import Swal from "sweetalert2";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+
+const AllUsers = () => {
+  const axiosPublic = useAxiosPublic();
+
+  const { data: users = [], refetch } = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+      const result = await axiosPublic.get("allUsers");
+      return result.data;
+    },
+  });
+
+  const makeAdmin = async (email) => {
+    Swal.fire({
+      title: `Want to make admin - ${email}`,
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Make Admin!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const result = await axiosPublic.post(`makeAdmin/${email}`);
+        console.log(result);
+        if (result.data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            title: `${email} is now Admin`,
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        }
+      }
+    });
+  };
+
+  const deleteUser = async (id, email) => {
+    Swal.fire({
+      title: `Are you sure? want to delete user- ${email}`,
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const result = await axiosPublic.delete(`user/${id}`);
+        // console.log(result);
+        if (result.data.deletedCount) {
+          refetch();
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        }
+      }
+    });
+  };
+
+  return (
+    <div>
+      <h1 className="text-4xl m-9 font-bold">All Users: {users.length}</h1>
+      <div className="overflow-x-auto bg-white p-10 rounded-lg m-10">
+        <table className="table bg-white">
+          {/* head */}
+          <thead>
+            <tr className="text-lg">
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={user._id}>
+                <th>{index + 1}</th>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>
+                  {user.role === "admin" ? (
+                    <p className="font-bold text-green-700">Admin</p>
+                  ) : (
+                    <button
+                      onClick={() => makeAdmin(user.email)}
+                      className="btn bg-emerald-800 hover:bg-emerald-600 text-white"
+                    >
+                      Make Admin
+                    </button>
+                  )}
+                </td>
+                <td>
+                  <button
+                    onClick={() => deleteUser(user._id, user.email)}
+                    className="btn bg-red-700 text-white  hover:bg-red-600"
+                  >
+                    Delete User
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default AllUsers;

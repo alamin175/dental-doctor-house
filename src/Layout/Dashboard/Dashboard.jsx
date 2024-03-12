@@ -2,6 +2,7 @@ import { Link, Outlet } from "react-router-dom";
 import Navbar from "../../Pages/Shared/Navbar/Navbar";
 
 const Dashboard = () => {
+  const isAdmin = true;
   return (
     <div>
       <div className="bg-emerald-700">
@@ -29,30 +30,69 @@ const Dashboard = () => {
             ></label>
             <ul className="menu p-4 w-80 min-h-full bg-white text-base-content">
               {/* Sidebar content here */}
-              <Link
-                className="text-xl text-gray-500 font-bold"
-                to="/dashboard/myAppoinments"
-              >
-                <li>
-                  <a>My Appoinments</a>
-                </li>
-              </Link>
-              <Link
-                className="text-xl text-gray-500 font-bold"
-                to="/dashboard/myAppoinments"
-              >
-                <li>
-                  <a>My History</a>
-                </li>
-              </Link>
-              <Link
-                className="text-xl text-gray-500 font-bold"
-                to="/dashboard/myAppoinments"
-              >
-                <li>
-                  <a>My Reviews</a>
-                </li>
-              </Link>
+              {isAdmin ? (
+                <>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/allUsers"
+                  >
+                    <li>
+                      <a>All Users</a>
+                    </li>
+                  </Link>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/addDoctor"
+                  >
+                    <li>
+                      <a>Add A Doctor</a>
+                    </li>
+                  </Link>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/manageDoctors"
+                  >
+                    <li>
+                      <a>Manage Doctor's</a>
+                    </li>
+                  </Link>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/statistics"
+                  >
+                    <li>
+                      <a>Statistics</a>
+                    </li>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/myAppoinments"
+                  >
+                    <li>
+                      <a>My Appoinments</a>
+                    </li>
+                  </Link>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/myAppoinments"
+                  >
+                    <li>
+                      <a>My History</a>
+                    </li>
+                  </Link>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/myAppoinments"
+                  >
+                    <li>
+                      <a>My Reviews</a>
+                    </li>
+                  </Link>
+                </>
+              )}
             </ul>
           </div>
         </div>

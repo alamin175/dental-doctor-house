@@ -25,7 +25,7 @@ const Register = () => {
 
     createUser(email, password)
       .then((currentUser) => {
-        console.log(currentUser.user);
+        // console.log(currentUser.user);
         if (currentUser.user) {
           toast.success("User Created in Successfully!", {
             position: "top-right",
