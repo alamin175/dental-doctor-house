@@ -1,17 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useDoctors from "../../../hooks/useDoctors";
 
 const ManageDoctors = () => {
   const axiosPublic = useAxiosPublic();
 
-  const { data: doctors = [], refetch } = useQuery({
-    queryKey: ["doctors"],
-    queryFn: async () => {
-      const doctor = await axiosPublic.get("doctors");
-      return doctor.data;
-    },
-  });
+  const [doctors] = useDoctors();
 
   const deleteDoctor = async (id, user) => {
     Swal.fire({
@@ -43,7 +38,7 @@ const ManageDoctors = () => {
       <h1 className="text-4xl border-l-8 border-[#F7A582] p-3 m-9 font-bold">
         Manage Doctor's: {doctors.length}
       </h1>
-      <div className="overflow-x-auto bg-white p-10 rounded-lg m-10">
+      <div className="overflow-x-auto bg-white md:p-10 rounded-lg m-4 md:m-10">
         <table className="table bg-white">
           {/* head */}
           <thead>

@@ -58,6 +58,14 @@ const Dashboard = () => {
                   </Link>
                   <Link
                     className="text-xl text-gray-500 font-bold"
+                    to="/dashboard/allAppoinment"
+                  >
+                    <li>
+                      <a>All Appoinment</a>
+                    </li>
+                  </Link>
+                  <Link
+                    className="text-xl text-gray-500 font-bold"
                     to="/dashboard/statistics"
                   >
                     <li>

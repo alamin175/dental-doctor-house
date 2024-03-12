@@ -1,17 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useUsers from "../../../hooks/useUsers";
 
 const AllUsers = () => {
   const axiosPublic = useAxiosPublic();
 
-  const { data: users = [], refetch } = useQuery({
-    queryKey: ["users"],
-    queryFn: async () => {
-      const result = await axiosPublic.get("allUsers");
-      return result.data;
-    },
-  });
+  const [users, refetch] = useUsers();
 
   const makeAdmin = async (email) => {
     Swal.fire({
@@ -68,7 +63,7 @@ const AllUsers = () => {
       <h1 className="text-4xl m-9 font-bold border-l-8 border-[#F7A582] p-3">
         All Users: {users.length}
       </h1>
-      <div className="overflow-x-auto bg-white p-10 rounded-lg m-10">
+      <div className="overflow-x-auto bg-white md:p-10 rounded-lg m-4 md:m-10">
         <table className="table bg-white">
           {/* head */}
           <thead>
