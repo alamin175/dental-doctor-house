@@ -65,7 +65,9 @@ const AllUsers = () => {
 
   return (
     <div>
-      <h1 className="text-4xl m-9 font-bold">All Users: {users.length}</h1>
+      <h1 className="text-4xl m-9 font-bold border-l-8 border-[#F7A582] p-3">
+        All Users: {users.length}
+      </h1>
       <div className="overflow-x-auto bg-white p-10 rounded-lg m-10">
         <table className="table bg-white">
           {/* head */}

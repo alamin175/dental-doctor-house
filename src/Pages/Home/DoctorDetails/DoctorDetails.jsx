@@ -12,7 +12,9 @@ const DoctorDetails = () => {
   return (
     <div>
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
-        <h1 className="text-5xl text-white font-bold ">Doctor Profile</h1>
+        <h1 className="text-5xl text-white font-bold border-l-8 border-[#F7A582] p-3">
+          Doctor Profile
+        </h1>
       </div>
       <section className="bg-[#E6E6E6] p-4 md:p-10">
         <div className="md:flex p-6 bg-white md:w-10/12 items-center gap-16 mx-auto m-10">

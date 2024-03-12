@@ -40,7 +40,7 @@ const ManageDoctors = () => {
 
   return (
     <div>
-      <h1 className="text-4xl m-9 font-bold">
+      <h1 className="text-4xl border-l-8 border-[#F7A582] p-3 m-9 font-bold">
         Manage Doctor's: {doctors.length}
       </h1>
       <div className="overflow-x-auto bg-white p-10 rounded-lg m-10">
@@ -69,7 +69,7 @@ const ManageDoctors = () => {
                   </div>
                 </td>
                 <td>{doctor.name}</td>
-                <td>{doctor.special}</td>
+                <td>{doctor.speciality}</td>
                 <td>
                   <button
                     onClick={() => deleteDoctor(doctor._id, doctor.name)}

@@ -75,7 +75,7 @@ const Appoinment = () => {
   return (
     <div>
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
-        <h1 className="text-5xl border-l-8 border-[#F7A582] items-center p-2 text-white font-bold ">
+        <h1 className="text-5xl border-l-8 border-[#F7A582] p-3 items-center text-white font-bold ">
           Appoinment
         </h1>
       </div>

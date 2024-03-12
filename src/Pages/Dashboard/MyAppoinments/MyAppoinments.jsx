@@ -18,7 +18,7 @@ const MyAppoinments = () => {
 
   return (
     <div>
-      <h1 className="text-4xl m-9 font-bold">
+      <h1 className="text-4xl m-9 border-l-8 border-[#F7A582] p-3 font-bold">
         My Appoinments: {appoinments.length}
       </h1>
       <div className="flex justify-center w-11/12 md:w-9/12 mx-auto bg-white  overflow-x-auto my-16">
