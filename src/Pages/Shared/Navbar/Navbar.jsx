@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthContext";
 import img from "../../../assets/images/Other Image/image-removebg-preview.png";
+import "./Navbar.css";
 
 const Navbar = ({ isFixed }) => {
   const { user, logOut } = useContext(UserContext);
@@ -13,37 +14,42 @@ const Navbar = ({ isFixed }) => {
 
   const navOption = (
     <>
-      <Link to="/">
-        <li>
+      <li>
+        <NavLink to="/" activeClassName="active-link">
           <a>Home</a>
-        </li>
-      </Link>
+        </NavLink>
+      </li>
 
-      <Link to="/about">
-        <li>
+      <li>
+        <NavLink to="/about" activeclassname="active-link">
           <a>About</a>
-        </li>
-      </Link>
-      <Link to="/appoinment">
-        <li>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/appoinment" activeclassname="active-link">
           <a>Appoinment</a>
-        </li>
-      </Link>
-      <Link to="/dashboard">
-        <li>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/doctors" activeclassname="active-link">
+          <a>Doctor's</a>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/dashboard" activeclassname="active-link">
           <a>Dashboard</a>
-        </li>
-      </Link>
+        </NavLink>
+      </li>
       {user ? (
         <button className="btn bg-[#F7A582]" onClick={handleLogOut}>
           LogOut
         </button>
       ) : (
-        <Link to="/login">
+        <NavLink to="/login" activeclassname="active-link">
           <button className="btn" onClick={handleLogOut}>
             Login
           </button>
-        </Link>
+        </NavLink>
       )}
     </>
   );
@@ -78,9 +84,9 @@ const Navbar = ({ isFixed }) => {
             {navOption}
           </ul>
         </div>
-        <Link to="/">
+        <NavLink to="/">
           <img src={img} className="md:w-1/2" />
-        </Link>
+        </NavLink>
       </div>
       <div className="navbar-end hidden lg:flex ">
         <ul className="menu menu-horizontal px-1 items-center">{navOption}</ul>

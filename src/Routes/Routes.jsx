@@ -10,6 +10,7 @@ import Statistics from "../Pages/Dashboard/Statistics/Statistics";
 import About from "../Pages/Home/About/About";
 import Appoinment from "../Pages/Home/Appoinment/Appoinment";
 import DoctorDetails from "../Pages/Home/DoctorDetails/DoctorDetails";
+import Doctors from "../Pages/Home/Doctors/Doctors";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/doctors",
+        element: <Doctors></Doctors>,
       },
       {
         path: "/appoinment",

@@ -6,7 +6,7 @@ import useDoctors from "../../../hooks/useDoctors";
 const ManageDoctors = () => {
   const axiosPublic = useAxiosPublic();
 
-  const [doctors] = useDoctors();
+  const [doctors, refetch] = useDoctors();
 
   const deleteDoctor = async (id, user) => {
     Swal.fire({

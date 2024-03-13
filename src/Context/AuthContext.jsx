@@ -9,6 +9,7 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
+import axios from "axios";
 
 export const UserContext = createContext(null);
 const auth = getAuth(app);
@@ -24,6 +25,17 @@ const AuthContext = ({ children }) => {
       setUser(user);
       setLoading(false);
       if (user) {
+        axios
+          .post("http://localhost:5000/jwt", { email: user.email })
+          .then((data) => {
+            const token = data.data.token;
+            localStorage.setItem("accessToken", token);
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
+      } else {
+        localStorage.removeItem("accessToken");
       }
     });
     return () => {

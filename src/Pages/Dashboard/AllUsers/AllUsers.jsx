@@ -1,10 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useUsers from "../../../hooks/useUsers";
 
 const AllUsers = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
 
   const [users, refetch] = useUsers();
 
@@ -19,7 +18,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, Make Admin!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const result = await axiosPublic.post(`makeAdmin/${email}`);
+        const result = await axiosSecure.post(`makeAdmin/${email}`);
         console.log(result);
         if (result.data.modifiedCount) {
           refetch();
@@ -44,7 +43,7 @@ const AllUsers = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const result = await axiosPublic.delete(`user/${id}`);
+        const result = await axiosSecure.delete(`user/${id}`);
         // console.log(result);
         if (result.data.deletedCount) {
           refetch();

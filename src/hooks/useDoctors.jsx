@@ -12,7 +12,7 @@ const useDoctors = () => {
     },
   });
 
-  return [doctors];
+  return [doctors, refetch];
 };
 
 export default useDoctors;

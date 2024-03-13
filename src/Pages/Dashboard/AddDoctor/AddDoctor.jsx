@@ -32,6 +32,7 @@ const AddDoctor = () => {
         name: data.name,
         email: data.email,
         speciality: data.speciality,
+        description: data.description,
         image: imageHost?.data.data.url,
       };
 
@@ -83,6 +84,7 @@ const AddDoctor = () => {
           {errors.email && (
             <span className="text-red-600">{errors.email.message}</span>
           )}
+
           <label className="form-control">
             <div className="label">
               <span className="label-text">Select Speciality</span>
@@ -107,6 +109,23 @@ const AddDoctor = () => {
           </label>
           {errors.speciality && (
             <span className="text-red-600">{errors.speciality.message}</span>
+          )}
+
+          <label className="form-control ">
+            <div className="label">
+              <span className="label-text">Description</span>
+            </div>
+            <input
+              {...register("description", {
+                required: "Please give small description ",
+              })}
+              type="text"
+              placeholder="Description"
+              className="input input-bordered "
+            />
+          </label>
+          {errors.description && (
+            <span className="text-red-600">{errors.description.message}</span>
           )}
 
           <label className="form-control w-full">

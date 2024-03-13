@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext";
 import { toast, Bounce } from "react-toastify";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -33,6 +35,7 @@ const Login = () => {
             theme: "dark",
             transition: Bounce,
           });
+          navigate("/");
           reset();
         }
       })
