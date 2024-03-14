@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Context/AuthContext";
 
 const axiosSecure = axios.create({
-  baseURL: "https://dental-doctor-house-server.onrender.com/",
+  // baseURL: "https://dental-doctor-house-server.onrender.com",
+  baseURL: "http://localhost:5000/",
 });
 
 const useAxiosSecure = () => {

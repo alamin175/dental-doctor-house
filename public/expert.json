@@ -4,7 +4,7 @@
     "id": 5344553355,
     "price": 25,
     "available": "Monday-Friday",
-    "image": "../src/assets/images/doctor-img/expert-doctor1.jpg",
+    "image": "https://i.ibb.co/N7LC51D/expert-doctor1.jpg",
     "title": "Pediatrician",
     "post": "Child Health Specialist",
     "rating": 5,
@@ -14,7 +14,8 @@
     "passed1": "2008-2012",
     "varsity2": "Pediatric Medical School",
     "passed2": "2013-2017",
-    "graduate": ["MDS", "BDS"],
+    "graduate1": "MDS",
+    "graduate2": "BDS",
 
     "experience": [
       { "name": "Children's Hospital XYZ", "years": "2019-Present (5 Years)" },
@@ -63,7 +64,7 @@
     "id": 53445533451,
     "price": 35,
     "available": "Sunday-Thursday",
-    "image": "../src/assets/images/doctor-img/expert-doctor2.jpg",
+    "image": "https://i.ibb.co/RvM5km7/image.png",
     "title": "Orthopedic Surgeon",
     "post": "Bone and Joint Specialist",
     "rating": 5,
@@ -73,7 +74,8 @@
     "passed1": "2005-2009",
     "varsity2": "Orthopedic Surgery Residency",
     "passed2": "2010-2013",
-    "graduate": ["MDS", "BDS"],
+    "graduate1": "MDS",
+    "graduate2": "BDS",
     "experience": [
       { "name": "Orthopedic Center XYZ", "years": "2017-Present (7 Years)" },
       { "name": "Joint Care Clinic ABC", "years": "2020-Present (4 Years)" },
@@ -118,7 +120,7 @@
     "id": 53445533,
     "price": 15,
     "available": "Wednesday-Saturday",
-    "image": "../src/assets/images/doctor-img/expert-doctor3.jpeg",
+    "image": "https://i.ibb.co/xJG0ZDw/expert-doctor3.jpg",
     "title": "Dermatologist",
     "post": "Skin Care Specialist",
     "rating": 4,
@@ -128,7 +130,8 @@
     "passed1": "2006-2009",
     "varsity2": "Advanced Dermatology Fellowship",
     "passed2": "2011-2014",
-    "graduate": ["MDS", "BDS"],
+    "graduate1": "MDS",
+    "graduate2": "BDS",
     "experience": [
       { "name": "Dermatology Clinic XYZ", "years": "2019-2023 (4 Years)" },
       {

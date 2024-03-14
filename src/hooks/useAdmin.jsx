@@ -1,17 +1,21 @@
-import { useEffect, useState } from "react";
-import useUsers from "./useUsers";
+import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
+import { UserContext } from "../Context/AuthContext";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useAdmin = () => {
-  const [users] = useUsers();
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { user } = useContext(UserContext);
+  const axiosSecure = useAxiosSecure();
 
-  useEffect(() => {
-    // Use find to check if any user has the role 'admin'
-    const isAdminUser = users.find((user) => user.role === "admin");
-    setIsAdmin(!!isAdminUser); // Set isAdmin to true if an admin user is found
-  }, [users]);
+  const { data: isAdmin, isPending: isAdminLoading } = useQuery({
+    queryKey: ["isAdmin", user?.email],
+    queryFn: async () => {
+      const result = await axiosSecure.get(`admin/${user?.email}`);
+      return result.data.admin;
+    },
+  });
 
-  return [isAdmin];
+  return [isAdmin, isAdminLoading];
 };
 
 export default useAdmin;

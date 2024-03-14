@@ -1,16 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { UserContext } from "../../../Context/AuthContext";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const MyAppoinments = () => {
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(UserContext);
 
   const { data: appoinments = [] } = useQuery({
     queryKey: ["appoinments"],
     queryFn: async () => {
-      const result = await axiosPublic.get(`myAppoinments?email=${user.email}`);
+      const result = await axiosSecure.get(`myAppoinments?email=${user.email}`);
       return result.data;
     },
   });

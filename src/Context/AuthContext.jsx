@@ -9,12 +9,13 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import axios from "axios";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 export const UserContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthContext = ({ children }) => {
+  const axiosPublic = useAxiosPublic();
   const provider = new GoogleAuthProvider();
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,10 +24,10 @@ const AuthContext = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
-      setLoading(false);
+
       if (user) {
-        axios
-          .post("http://localhost:5000/jwt", { email: user.email })
+        axiosPublic
+          .post("jwt", { email: user.email })
           .then((data) => {
             const token = data.data.token;
             localStorage.setItem("accessToken", token);
@@ -37,6 +38,7 @@ const AuthContext = ({ children }) => {
       } else {
         localStorage.removeItem("accessToken");
       }
+      setLoading(false);
     });
     return () => {
       return unsubscribe;

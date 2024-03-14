@@ -18,13 +18,13 @@ const AllUsers = () => {
       confirmButtonText: "Yes, Make Admin!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const result = await axiosSecure.post(`makeAdmin/${email}`);
+        const result = await axiosSecure.patch(`makeAdmin/${email}`);
         console.log(result);
         if (result.data.modifiedCount) {
           refetch();
           Swal.fire({
             title: `${email} is now Admin`,
-            text: "Your file has been deleted.",
+            text: "",
             icon: "success",
           });
         }

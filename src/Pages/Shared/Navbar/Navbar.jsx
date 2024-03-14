@@ -21,32 +21,38 @@ const Navbar = ({ isFixed }) => {
       </li>
 
       <li>
-        <NavLink to="/about" activeclassname="active-link">
+        <NavLink to="/about" activeClassName="active-link">
           <a>About</a>
         </NavLink>
       </li>
       <li>
-        <NavLink to="/appoinment" activeclassname="active-link">
+        <NavLink to="/appoinment" activeClassName="active-link">
           <a>Appoinment</a>
         </NavLink>
       </li>
       <li>
-        <NavLink to="/doctors" activeclassname="active-link">
+        <NavLink to="/doctors" activeClassName="active-link">
           <a>Doctor's</a>
         </NavLink>
       </li>
       <li>
-        <NavLink to="/dashboard" activeclassname="active-link">
+        <NavLink to="/dashboard" activeClassName="active-link">
           <a>Dashboard</a>
         </NavLink>
       </li>
       {user ? (
-        <button className="btn bg-[#F7A582]" onClick={handleLogOut}>
+        <button
+          className="btn bg-[#F7A582] md:ml-2 hover:bg-[#ec8b61]"
+          onClick={handleLogOut}
+        >
           LogOut
         </button>
       ) : (
-        <NavLink to="/login" activeclassname="active-link">
-          <button className="btn" onClick={handleLogOut}>
+        <NavLink to="/login">
+          <button
+            className="btn  w-full bg-[#F7A582] md:ml-2 hover:bg-[#ec8b61]"
+            onClick={handleLogOut}
+          >
             Login
           </button>
         </NavLink>
@@ -59,8 +65,8 @@ const Navbar = ({ isFixed }) => {
         isFixed ? "fixed" : ""
       } `}
     >
-      <div className="navbar-start">
-        <div className="dropdown">
+      <div className="navbar-start ">
+        <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +85,7 @@ const Navbar = ({ isFixed }) => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content  text-xl font-bold bg-[#F7A582] mt-3 z-[1] p-2 shadow  rounded-box w-52"
           >
             {navOption}
           </ul>
@@ -88,8 +94,10 @@ const Navbar = ({ isFixed }) => {
           <img src={img} className="md:w-1/2" />
         </NavLink>
       </div>
-      <div className="navbar-end hidden lg:flex ">
-        <ul className="menu menu-horizontal px-1 items-center">{navOption}</ul>
+      <div className="navbar-end  hidden lg:flex ">
+        <ul className="menu menu-horizontal text-[#F7A582] px-1 items-center">
+          {navOption}
+        </ul>
       </div>
     </div>
   );

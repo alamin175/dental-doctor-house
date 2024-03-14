@@ -1,13 +1,27 @@
+import { useQuery } from "@tanstack/react-query";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { useLoaderData, useParams } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const DoctorDetails = () => {
+  const axiosPublic = useAxiosPublic();
+
   const { id } = useParams();
-  const doctors = useLoaderData();
-  const idInt = parseInt(id);
-  const details = doctors.find((doctor) => doctor.id === idInt);
+  // console.log(id);
+  // const doctors = useLoaderData();
+  // const idInt = parseInt(id);
+  // const details = doctors.find((doctor) => doctor.id === idInt);
   // console.log(details);
+
+  const { data: details = [] } = useQuery({
+    queryKey: ["details"],
+    queryFn: async () => {
+      const result = await axiosPublic.get(`doctorDetails/${id}`);
+
+      return result.data;
+    },
+  });
 
   return (
     <div>
@@ -18,25 +32,30 @@ const DoctorDetails = () => {
       </div>
       <section className="bg-[#E6E6E6] p-4 md:p-10">
         <div className="md:flex p-6 bg-white md:w-10/12 items-center gap-16 mx-auto m-10">
-          <img className="md:w-56 " src={details.image} alt="" />
-          <div className="flex flex-col gap-3">
-            <h1 className="text-3xl mt-4 md:mt-0s ">{details.name}</h1>
+          <div>
+            <img className="md:w-56 " src={details.image} alt="" />
+          </div>
+          <div className="flex flex-col gap-2">
+            <h1 className="text-3xl mt-4 md:mt-0 ">{details.name}</h1>
             <p>{details.post}</p>
             <p className="flex text-orange-500">
               {Array.from({ length: details.rating }, (_, index) => (
                 <FaStar key={index} />
               ))}
             </p>
-            <p className="flex items-center">
+            <p className="flex items-center gap-2">
               <FaLocationDot /> {details.location}
             </p>
+
             <div className="md:flex gap-3">
-              <p className="border-2 border-gray-400 p-2 mb-4 md:mb-0 rounded-lg ">
-                {details.specialization[0]}
-              </p>
-              <p className="border-2 border-gray-400 p-2 rounded-lg ">
-                {details.specialization[1]}
-              </p>
+              {details.specialization?.slice(0, 2).map((special, index) => (
+                <p
+                  key={index}
+                  className="border-2 border-gray-400 p-2 mb-4 md:mb-0 rounded-lg "
+                >
+                  {special}
+                </p>
+              ))}
             </div>
           </div>
         </div>
@@ -77,53 +96,33 @@ const DoctorDetails = () => {
                 <div>
                   <h2 className="my-5 font-bold text-xl">Education</h2>
                   <li className="font-bold mb-3 ml-3"> {details.varsity1}</li>
-                  <div className="text-gray-500 ml-6 mb-4">
-                    <p>{details.graduate[0]}</p>
+                  <div className="text-gray-500 ml-10 mb-4">
+                    <p>{details.graduate1}</p>
                     <p>{details.passed1}</p>
                   </div>
                   <li className="font-bold mb-3 ml-3"> {details.varsity2}</li>
-                  <div className="text-gray-500 ml-6 ">
-                    <p>{details.graduate[1]}</p>
+                  <div className="text-gray-500 ml-10 ">
+                    <p>{details.graduate2}</p>
                     <p>{details.passed2}</p>
                   </div>
                 </div>
+
                 <div>
                   <h2 className="my-5 mt-8 font-bold text-xl">
                     Work & Experience
                   </h2>
 
-                  <div>
-                    <li className="font-bold mb-2 ml-3">
-                      {" "}
-                      {details.experience[0].name}
-                    </li>
-                    <p className="text-gray-500 ml-8 mb-4">
-                      {details.experience[0].years}
-                    </p>
-                  </div>
-                  <div>
-                    <li className="font-bold mb-2 ml-3">
-                      {" "}
-                      {details.experience[1].name}
-                    </li>
-                    <p className="text-gray-500 ml-8 mb-4">
-                      {details.experience[1].years}
-                    </p>
-                  </div>
-                  <div>
-                    <li className="font-bold mb-3 ml-3">
-                      {" "}
-                      {details.experience[2].name}
-                    </li>
-                    <p className="text-gray-500 ml-8">
-                      {details.experience[2].years}
-                    </p>
-                  </div>
+                  {details.experience?.map((experience) => (
+                    <div key={experience.name} className="mb-4">
+                      <li className="font-bold ml-3"> {experience.name}</li>
+                      <p className="text-gray-500 ml-8">{experience.years}</p>
+                    </div>
+                  ))}
                 </div>
                 <div>
                   <h2 className="my-5 mt-8 font-bold text-xl">Services</h2>
 
-                  {details.services.map((service) => (
+                  {details.services?.map((service) => (
                     <li className="ml-3 text-gray-500" key={service}>
                       {service}
                     </li>
@@ -133,7 +132,7 @@ const DoctorDetails = () => {
               <div>
                 <div>
                   <h2 className="my-5 mt-6 font-bold text-xl">Awards</h2>
-                  {details.awards.map((award) => (
+                  {details.awards?.map((award) => (
                     <div key={award.name} className="ml-3 md:ml-8 mb-6">
                       <li>{award.year}</li>
                       <p className="font-bold ml-5 my-3 ">{award.name}</p>
@@ -145,7 +144,7 @@ const DoctorDetails = () => {
                   <h2 className="my-5 mt-6 font-bold text-xl">
                     Specializations
                   </h2>
-                  {details.specialization.map((special) => (
+                  {details.specialization?.map((special) => (
                     <li className="text-gray-500 ml-3 md:ml-8" key={special}>
                       {special}
                     </li>

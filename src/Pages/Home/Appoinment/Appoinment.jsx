@@ -4,16 +4,17 @@ import { useContext, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 import img from "../../../assets/images/Other Image/appointment.jpg";
 import { UserContext } from "../../../Context/AuthContext";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const Appoinment = () => {
   const today = new Date();
   const { user } = useContext(UserContext);
   const [selectedDate, setDate] = useState(null);
   const [selectService, setSelectService] = useState(null);
-  const axiosPublic = useAxiosPublic();
+  const axiosSecure = useAxiosSecure();
   //   console.log(selectedDate);
   // console.log(selectService);
 
@@ -28,7 +29,7 @@ const Appoinment = () => {
   const { data: services = [] } = useQuery({
     queryKey: ["services"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/services");
+      const res = await axiosSecure.get("/services");
       return res.data;
     },
   });
@@ -47,7 +48,11 @@ const Appoinment = () => {
   /* optional~~ can't select the previous day */
   const handleDateSelect = (date) => {
     if (isBefore(date, today)) {
-      alert("Cannot select a previous day");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Cannot Select today or previous day",
+      });
       return;
     }
     setDate(date);
@@ -62,7 +67,7 @@ const Appoinment = () => {
       name: data.name,
     };
 
-    const confirmBooking = await axiosPublic.post(
+    const confirmBooking = await axiosSecure.post(
       "/appoinment",
       appoinmentDetails
     );
@@ -202,8 +207,16 @@ const Appoinment = () => {
 
           <button
             onClick={() => {
-              if (!selectService || !selectedDate) {
-                alert("Please select a service and a date.");
+              if (!selectedDate) {
+                Swal.fire({
+                  icon: "error",
+                  title: "Please Select an appoinment date",
+                });
+              } else if (!selectService) {
+                Swal.fire({
+                  title: "Please select a service",
+                  icon: "error",
+                });
               } else {
                 document.getElementById("my_modal_3").showModal();
               }

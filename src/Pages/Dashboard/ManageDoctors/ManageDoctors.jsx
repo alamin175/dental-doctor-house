@@ -1,12 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../../hooks/useAxiosPublic";
-import useDoctors from "../../../hooks/useDoctors";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useManageDoctors from "../../../hooks/useManageDoctors";
 
 const ManageDoctors = () => {
-  const axiosPublic = useAxiosPublic();
-
-  const [doctors, refetch] = useDoctors();
+  const axiosSecure = useAxiosSecure();
+  const [doctors, refetch] = useManageDoctors();
 
   const deleteDoctor = async (id, user) => {
     Swal.fire({
@@ -19,8 +18,8 @@ const ManageDoctors = () => {
       confirmButtonText: "Yes, Delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const result = await axiosPublic.delete(`doctor/${id}`);
-        console.log(result);
+        const result = await axiosSecure.delete(`doctor/${id}`);
+        // console.log(result);
         if (result.data.deletedCount) {
           refetch();
           Swal.fire({

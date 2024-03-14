@@ -1,11 +1,11 @@
 import { PieChart } from "@mui/x-charts";
 import React from "react";
 import useAppoinment from "../../../hooks/useAppoinment";
-import useDoctors from "../../../hooks/useDoctors";
+import useManageDoctors from "../../../hooks/useManageDoctors";
 import useUsers from "../../../hooks/useUsers";
 
 const Statistics = () => {
-  const [doctors] = useDoctors();
+  const [doctors, refetch] = useManageDoctors();
   const [appoinment] = useAppoinment();
   const [users] = useUsers();
 

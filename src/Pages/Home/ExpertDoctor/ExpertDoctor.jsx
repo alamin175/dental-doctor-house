@@ -1,18 +1,19 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { FaCalendarCheck, FaDollarSign, FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const ExpertDoctor = () => {
-  const [expertDoctor, setExpertDoctor] = useState([]);
+  const axiosPublic = useAxiosPublic();
 
-  useEffect(() => {
-    fetch("expert.json")
-      .then((res) => res.json())
-      .then((data) => setExpertDoctor(data));
-  }, []);
-  // console.log(expertDoctor);
+  const { data: expertDoctor = [] } = useQuery({
+    queryKey: ["expertDoctors"],
+    queryFn: async () => {
+      const result = await axiosPublic.get("expertDoctors");
+      return result.data;
+    },
+  });
 
   return (
     <div className="my-16">
@@ -50,7 +51,7 @@ const ExpertDoctor = () => {
                 <p>${doctor.price}</p>
               </div>
               <div className="card-actions">
-                <Link className="w-full" to={`/doctor/${doctor.id}`}>
+                <Link className="w-full" to={`/doctor/${doctor._id}`}>
                   <button className="btn btn-outline border-orange-500 mt-6 hover:border-orange-500 hover:bg-orange-500 w-full ">
                     More Details
                   </button>

@@ -4,8 +4,8 @@ import Navbar from "../../Pages/Shared/Navbar/Navbar";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Dashboard = () => {
-  // const [isAdmin] = useAdmin();
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
+  // const isAdmin = true;
   return (
     <div>
       <div className="bg-emerald-700">

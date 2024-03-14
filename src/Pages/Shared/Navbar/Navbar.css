@@ -2,6 +2,6 @@
 .active-link {
   color: #f7a582; /* Your desired color for active links */
   font-weight: bold;
-  background-color: red;
+  /* background-color: red; */
   /* Optional: Add any additional styles for active links */
 }

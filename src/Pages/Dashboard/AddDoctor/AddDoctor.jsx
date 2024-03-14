@@ -2,8 +2,10 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const AddDoctor = () => {
+  const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const AddDoctor = () => {
         "content-type": "multipart/form-data",
       },
     });
-    console.log(imageHost);
+    // console.log(imageHost);
     if (imageHost?.data.success) {
       const details = {
         name: data.name,
@@ -36,8 +38,8 @@ const AddDoctor = () => {
         image: imageHost?.data.data.url,
       };
 
-      const doctor = await axiosPublic.post("doctor", details);
-      console.log(doctor);
+      const doctor = await axiosSecure.post("doctor", details);
+      // console.log(doctor);
       if (doctor.data.insertedId) {
         reset();
         toast.success("Doctor Added Successfully Completed");
