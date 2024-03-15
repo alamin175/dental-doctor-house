@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import notFoundImg from "../../assets/images/Other Image/404 Error with a cute animal-bro.png";
 
 const NotFound = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-center">
+      <Helmet>
+        <title>Not Found - Doc House</title>
+      </Helmet>
       <div>
         <img
           className=" text-center mx-auto md:w-1/2"

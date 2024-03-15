@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useUsers from "../../../hooks/useUsers";
@@ -59,6 +60,9 @@ const AllUsers = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>All User's - Doc House</title>
+      </Helmet>
       <h1 className="text-4xl m-9 font-bold border-l-8 border-[#F7A582] p-3">
         All Users: {users.length}
       </h1>

@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
+import { Helmet } from "react-helmet";
 import { UserContext } from "../../../Context/AuthContext";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -18,6 +19,9 @@ const MyAppoinments = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>My Appoinments - Doc House</title>
+      </Helmet>
       <h1 className="text-4xl m-9 border-l-8 border-[#F7A582] p-3 font-bold">
         My Appoinments: {appoinments.length}
       </h1>

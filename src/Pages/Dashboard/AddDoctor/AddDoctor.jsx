@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -50,6 +51,9 @@ const AddDoctor = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Add Doctor - Doc House</title>
+      </Helmet>
       <h1 className="text-4xl m-9 font-bold border-l-8 border-[#F7A582] p-3">
         Add A Doctor
       </h1>

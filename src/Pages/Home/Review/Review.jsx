@@ -4,6 +4,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { FaQuoteLeft, FaUserCircle } from "react-icons/fa";
+import Marquee from "react-fast-marquee";
 
 // import "./styles.css";
 
@@ -29,32 +30,71 @@ const Review = () => {
         </p>
       </div>
       <div>
-        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> */}
+        <Marquee>
           {reviews.map((review) => (
-            <SwiperSlide key={review.id}>
-              <div className="border-4 border-orange-500 w-11/12 md:w-1/2 md:my-10 text-start p-10 rounded-lg mx-auto">
-                <div className="md:flex justify-between">
-                  <div className="flex">
-                    <FaUserCircle className="text-6xl mx-4"></FaUserCircle>
-                    <div>
-                      <h1 className="text-2xl font-bold">{review.name}</h1>
-                      <p>
-                        From :{" "}
-                        <span className="text-orange-600">
-                          {review.location}
-                        </span>{" "}
-                      </p>
-                    </div>
+            <div
+              key={review.id}
+              className="border-4 w-[370px] h-[450px] md:w-[600px] md:h-[400px] border-orange-500  m-4 md:m-10 text-start p-4 md:p-10 rounded-lg "
+            >
+              <div className="md:flex justify-between">
+                <div className="flex justify-center items-center m-3">
+                  <FaUserCircle className="text-6xl mx-4"></FaUserCircle>
+                  <div>
+                    <h1 className="text-2xl font-bold">{review.name}</h1>
+                    <p>
+                      From :{" "}
+                      <span className="text-orange-600">{review.location}</span>{" "}
+                    </p>
                   </div>
-                  <FaQuoteLeft className="hidden md:block md:enabled md:text-6xl text-orange-600"></FaQuoteLeft>
                 </div>
-                <div className="py-2 md:p-4 mx-auto">
-                  <p>{review.details}</p>
-                </div>
+                <FaQuoteLeft className="hidden md:block md:enabled md:text-6xl text-orange-600"></FaQuoteLeft>
               </div>
-            </SwiperSlide>
+              <div className="md:py-2 md:p-4 mx-auto">
+                <p>{review.details}</p>
+              </div>
+            </div>
           ))}
-        </Swiper>
+        </Marquee>
+        //{" "}
+        {/* <SwiperSlide key={review.id}>
+          //{" "}
+          <div className="border-4 border-orange-500 w-11/12 md:w-1/2 md:my-10 text-start p-10 rounded-lg mx-auto">
+            //{" "}
+            <div className="md:flex justify-between">
+              //{" "}
+              <div className="flex">
+                // <FaUserCircle className="text-6xl mx-4"></FaUserCircle>
+                //{" "}
+                <div>
+                  // <h1 className="text-2xl font-bold">{review.name}</h1>
+                  //{" "}
+                  <p>
+                    // From : //{" "}
+                    <span className="text-orange-600">
+                      // {review.location}
+                      //{" "}
+                    </span>{" "}
+                    //{" "}
+                  </p>
+                  //{" "}
+                </div>
+                //{" "}
+              </div>
+              //{" "}
+              <FaQuoteLeft className="hidden md:block md:enabled md:text-6xl text-orange-600"></FaQuoteLeft>
+              //{" "}
+            </div>
+            //{" "}
+            <div className="py-2 md:p-4 mx-auto">
+              // <p>{review.details}</p>
+              //{" "}
+            </div>
+            //{" "}
+          </div>
+          //{" "}
+        </SwiperSlide> */}
+        {/* </Swiper> */}
       </div>
     </div>
   );

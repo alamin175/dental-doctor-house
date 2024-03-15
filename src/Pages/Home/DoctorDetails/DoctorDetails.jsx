@@ -1,7 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 import { FaStar } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const DoctorDetails = () => {
@@ -25,6 +26,9 @@ const DoctorDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Doctor Details - Doc House</title>
+      </Helmet>
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
         <h1 className="text-5xl text-white font-bold border-l-8 border-[#F7A582] p-3">
           Doctor Profile

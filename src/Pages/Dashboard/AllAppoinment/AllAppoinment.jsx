@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import useAppoinment from "../../../hooks/useAppoinment";
 
 const AllAppoinment = () => {
   const [appoinment] = useAppoinment();
   return (
     <div>
+      <Helmet>
+        <title>All Appoinments- Doc House</title>
+      </Helmet>
       <h1 className="text-4xl border-l-8 border-[#F7A582] p-3 m-9 font-bold">
         All Appoinment: {appoinment.length}
       </h1>

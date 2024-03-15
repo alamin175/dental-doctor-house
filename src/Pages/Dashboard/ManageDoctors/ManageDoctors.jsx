@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useManageDoctors from "../../../hooks/useManageDoctors";
@@ -34,6 +35,9 @@ const ManageDoctors = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Manage Doctor's- Doc House</title>
+      </Helmet>
       <h1 className="text-4xl border-l-8 border-[#F7A582] p-3 m-9 font-bold">
         Manage Doctor's: {doctors.length}
       </h1>

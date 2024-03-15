@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { format, isBefore } from "date-fns";
 import { useContext, useState } from "react";
 import { DayPicker } from "react-day-picker";
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
@@ -79,6 +80,9 @@ const Appoinment = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Appoinment - Doc House</title>
+      </Helmet>
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
         <h1 className="text-5xl border-l-8 border-[#F7A582] p-3 items-center text-white font-bold ">
           Appoinment

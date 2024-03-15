@@ -5,6 +5,7 @@ import { UserContext } from "../../Context/AuthContext";
 import { toast, Bounce, ToastContainer } from "react-toastify";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -51,6 +52,9 @@ const Register = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Register - Doc House</title>
+      </Helmet>
       <div className="md:flex flex-row-reverse">
         <div className="flex items-center bg-emerald-800 md:w-1/2 md:h-screen">
           <img src="https://i.ibb.co/dG1Wt6q/Mobile-login-pana.png" alt="" />

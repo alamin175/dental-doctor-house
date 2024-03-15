@@ -1,5 +1,6 @@
 import { PieChart } from "@mui/x-charts";
 import React from "react";
+import { Helmet } from "react-helmet";
 import useAppoinment from "../../../hooks/useAppoinment";
 import useManageDoctors from "../../../hooks/useManageDoctors";
 import useUsers from "../../../hooks/useUsers";
@@ -11,6 +12,9 @@ const Statistics = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Statistics - Doc House</title>
+      </Helmet>
       <h1 className="text-4xl m-9 font-bold border-l-8 border-[#F7A582] p-3">
         Statistics
       </h1>

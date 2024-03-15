@@ -2,12 +2,16 @@ import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
 import Navbar from "../../Pages/Shared/Navbar/Navbar";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin();
   // const isAdmin = true;
   return (
     <div>
+      <Helmet>
+        <title>Dashboard - Doc House</title>
+      </Helmet>
       <div className="bg-emerald-700">
         <Navbar isFixed={false}></Navbar>
       </div>

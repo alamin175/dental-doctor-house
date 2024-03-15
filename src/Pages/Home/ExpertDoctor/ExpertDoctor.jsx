@@ -20,9 +20,12 @@ const ExpertDoctor = () => {
       <h3 className="mb-4 text-center text-2xl md:text-5xl font-bold">
         Our Expert Doctor's
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  place-items-center">
+      <div className="grid grid-cols-1 gap-4 m-4 md:grid-cols-2 lg:grid-cols-3  place-items-center">
         {expertDoctor.map((doctor) => (
-          <div key={doctor.name} className="card w-96 bg-base-100 shadow-xl ">
+          <div
+            key={doctor.name}
+            className="card md:w-96 bg-base-100 shadow-xl "
+          >
             <figure className="px-4 pt-10">
               <img
                 src={doctor.image}

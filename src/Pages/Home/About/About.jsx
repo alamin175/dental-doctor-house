@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title>About - Doc House</title>
+      </Helmet>
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
         <h1 className="text-5xl border-l-8 border-[#F7A582] items-center p-2 text-white font-bold ">
           About Us

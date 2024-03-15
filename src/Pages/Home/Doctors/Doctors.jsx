@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import useDoctors from "../../../hooks/useDoctors";
 
 const Doctors = () => {
@@ -7,6 +8,9 @@ const Doctors = () => {
   const itemsToShow = showAll ? doctors.length : 4;
   return (
     <div>
+      <Helmet>
+        <title>Doctor's - Doc House</title>
+      </Helmet>
       <div className="w-full bg-emerald-800  h-[350px] flex justify-center items-center ">
         <h1 className="text-5xl text-white font-bold border-l-8 border-[#F7A582] p-3">
           Doctor's

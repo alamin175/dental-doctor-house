@@ -2,9 +2,19 @@ import img from "../../../assets/images/Other Image/woman-with-stethoscope-holdi
 import img1 from "../../../assets/images/Other Image/teeth.png";
 import { FaRegClock } from "react-icons/fa";
 import { FaPhoneVolume, FaLocationDot } from "react-icons/fa6";
+import Marquee from "react-fast-marquee";
 const OurServices = () => {
   return (
     <div>
+      <div className="mx-5 mt-20">
+        <Marquee className=" text-emerald-800 font-bold text-xl bg-[#ffb99d] p-4  m-5 mx-auto  flex items-center ">
+          <span className="mr-16">
+            Our Appoinment is going on. You can booking a seat for any time on
+            any dental service. Please visit our appoinment section for booking
+            an appoinment.
+          </span>
+        </Marquee>
+      </div>
       <div className="md:flex w-10/12 mx-auto my-20">
         <img className="md:w-1/2 mr-10" src={img} alt="" />
         <div>

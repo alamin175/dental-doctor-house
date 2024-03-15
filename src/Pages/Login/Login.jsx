@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Context/AuthContext";
 import { toast, Bounce } from "react-toastify";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,6 +45,9 @@ const Login = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Login - Doc House</title>
+      </Helmet>
       <div className="md:flex">
         <div className="flex items-center bg-emerald-800 md:w-1/2 md:h-screen">
           <img src="https://i.ibb.co/dG1Wt6q/Mobile-login-pana.png" alt="" />
