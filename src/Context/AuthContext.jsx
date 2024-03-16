@@ -29,7 +29,7 @@ const AuthContext = ({ children }) => {
         axiosPublic
           .post("jwt", { email: user.email })
           .then((data) => {
-            const token = data.data.token;
+            const token = data.data?.token;
             localStorage.setItem("accessToken", token);
           })
           .catch((error) => {
